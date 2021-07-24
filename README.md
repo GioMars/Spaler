@@ -1,4 +1,4 @@
-# De Novo Assembly basato su Spark 
+# De Novo Assembly basato su Spark jljjli
 
 L’assemblaggio de novo è il metodo di costruzione di genomi a partire da un gran numero di frammenti di DNA (reads), senza alcuna conoscenza a priori della sequenza completa o dell'ordine corretto di tali frammenti.
 In questo lavoro è stato affrontato il problema di parallelizzazione mediante sistemi di memoria distribuiti dell'assemblaggio di nuovi genomi basato su grafi di De Bruijn, facendo riferimento alla procedura [Spaler](https://www.researchgate.net/publication/283425205_Spaler_Spark_and_GraphX_based_de_novo_genome_assembler).  Esiste un ampio interesse nell'uso dell'assemblaggio de novo poiché il numero di specie completamente sequenziate è piccolo rispetto a quelle sconosciute.
