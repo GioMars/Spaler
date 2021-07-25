@@ -25,14 +25,14 @@ object graphUtil {
       triplet => {
         val r = 0.1
         if(triplet.attr.getDouble(5) < r) {
-          triplet.sendToDst(true)
-          triplet.sendToSrc(true)
+          Iterator(triplet.sendToDst(true),
+          triplet.sendToSrc(true))
         } else{
-          triplet.sendToDst(false)
-          triplet.sendToSrc(false)
+          Iterator(triplet.sendToDst(false),
+          triplet.sendToSrc(false))
         }
       },
-      (a, b) => a||b
+      (a, b) => a || b
     )
 
 
@@ -73,7 +73,7 @@ object graphUtil {
       attr._3,
       attr._4 || attr._6,
       attr._5,
-      attr._4                // CARATTERIZZAZIONE AMBIGUO/ NON AMBIGUO
+      attr._4              // CARATTERIZZAZIONE AMBIGUO/ NON AMBIGUO
     ))
 
     /*
@@ -81,9 +81,6 @@ object graphUtil {
     round4.vertices.foreach(println)
      */
 
-    // TIPS TRIMMING
-    round4 = round4.subgraph(triplet => !(triplet.dstAttr._5== 1 && triplet.srcAttr._6) ||
-      !(triplet.srcAttr._5 == 1 && triplet.dstAttr._6))
 
 
     // PREGEL
@@ -102,14 +99,14 @@ object graphUtil {
 
       // SEND MSG
       triplet => {
-       if(triplet.srcAttr._4 && !triplet.dstAttr._4 && triplet.srcAttr._5 < 3) {
+       if(triplet.srcAttr._4 && !triplet.dstAttr._4 && !triplet.srcAttr._6) {
          if(triplet.srcAttr._2 == -1) {
            Iterator((triplet.dstId, (triplet.srcId, triplet.srcAttr._2 + 2, triplet.attr.getString(4), true)),
            (triplet.srcId, (triplet.srcId, 0, triplet.attr.getString(2), true)))
        } else {
           Iterator((triplet.dstId, (triplet.srcAttr._1, triplet.srcAttr._2 + 1, triplet.attr.getString(4), true)))
          }
-       } else if (triplet.dstAttr._4 && !triplet.srcAttr._4 && triplet.dstAttr._5 < 3){
+       } else if (triplet.dstAttr._4 && !triplet.srcAttr._4 && !triplet.dstAttr._6){
          var pol1 = "H"
          if(triplet.attr.getString(4) == "H"){
            pol1 = "L"
