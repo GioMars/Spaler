@@ -188,4 +188,5 @@ Segue presentazione riassuntiva dei risultati sperimentali ottenuti.
 |               | Nr.reads | k  | Nr.kmer | cores | iterations | Nr.contigs | Time (sec)   |
 |---------------|----------|----|---------|-------|:----------:|------------|--------------|
 | papaya.fasta  | 5661     | 20 | 714969  | 8     | 10         | 303477     | 128          |
+| grandis.fasta | 10000    | 20 | 1289109 | 8     | 10         | 546191     | 345 (5'45'') |
 
