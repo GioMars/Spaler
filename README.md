@@ -185,7 +185,7 @@ boolean Neo = false;
 
 Segue presentazione riassuntiva dei risultati sperimentali ottenuti.
 
-|               | Nr.reads | k  | Nr.kmer | cores | iterations | Nr.contigs | Time (sec)   |
+|               | Nr.reads | k  | Nr.kmer | cores | Iterations | Nr.contigs | Time (sec)   |
 |---------------|----------|----|---------|-------|:----------:|------------|--------------|
 | papaya.fasta  | 5661     | 20 | 714969  | 8     | 10         | 303477     | 128          |
 | grandis.fasta | 10000    | 20 | 1289109 | 2     | 10         | 546142     | 522 (8'42'') |
