@@ -183,3 +183,9 @@ boolean Neo = false;
 * Dataset `papaya.fasta` (5661 reads)
 * Dataset `grandis.fasta` (10000 reads)
 
+Segue presentazione riassuntiva dei risultati sperimentali ottenuti.
+
+|               | Nr.reads | k  | Nr.kmer | cores | iterations | Nr.contigs | Time (sec)   |
+|---------------|----------|----|---------|-------|:----------:|------------|--------------|
+| papaya.fasta  | 5661     | 20 | 714969  | 8     | 10         | 303477     | 128          |
+
